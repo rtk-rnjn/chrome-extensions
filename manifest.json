@@ -1,0 +1,59 @@
+{
+    "manifest_version": 3,
+    "name": "GU - Utility",
+    "version": "1.0",
+    "description": "Utility for Galgotias University's Student. Extension provide additional features for the sites like Codetantra. More to come in future.",
+    "content_scripts": [
+        {
+            "js": [
+                "codetantra/buttonHandler.js"
+            ],
+            "matches": [
+                "https://galgotias.codetantra.com/*"
+            ],
+            "run_at": "document_end"
+        },
+        {
+            "matches": [
+                "https://*.youtube.com/*"
+            ],
+            "js": [
+                "youtube/contentScript.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": [
+        "storage",
+        "tabs",
+        "activeTab"
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "youtube/assets/bookmark.png",
+                "youtube/assets/play.png",
+                "youtube/assets/delete.png",
+                "youtube/assets/save.png"
+            ],
+            "matches": [
+                "https://*.youtube.com/*"
+            ]
+        }
+    ],
+    "host_permissions": [
+        "https://galgotias.codetantra.com/*",
+        "https://*.youtube.com/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": {
+            "16": "ext_icon.jpg",
+            "24": "ext_icon.jpg",
+            "32": "ext_icon.jpg"
+        }
+    }
+}

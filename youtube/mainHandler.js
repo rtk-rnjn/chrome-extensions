@@ -84,9 +84,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             viewBookmarks(currentVideoBookmarks);
         });
-    } else {
-        const container = document.getElementsByClassName("container")[0];
-
-        container.innerHTML = '<div class="title">Lot more features to come, stay tuned!</div>';
     }
 });

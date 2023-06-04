@@ -3,6 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -14,10 +22,48 @@
 <body>
     <div class="container">
         <div>
-            <div class="title">Your bookmarks for this video</div>
+            <div class="title"></div>
             <div class="bookmarks" id="bookmarks"></div>
         </div>
     </div>
+    <div id="popup-container" class="container">
+        <h6><strong>Rewardsleet </strong></h3><br>
+            <div class="form-floating">
+                <input type="number" class="form-control" id="count" name="count" min="0" value="30">
+                <label for="count"># of Searches</label>
+            </div>
+            <br>
+
+            <p id="mobile-info">Mobile Searches <i id="mobile-dropdown" class="fas fa-caret-down flip-up"></i></p>
+            <div class="form-floating">
+                <input type="number" class="form-control" id="mobile" name="mobile" min="0" value="30">
+                <label for="count"># of Mobile Searches</label>
+            </div>
+            <br>
+            <p id="delay-info">Delay (in seconds) <i id="delay-dropdown" class="fas fa-caret-down flip-up"></i></p>
+            <div class="form-floating form-div">
+                <input type="number" class="form-control" id="minDelay" step="0.1" name="minDelay" min="0" value="1.5"
+                    max="290">
+                <label for="count">Minimum</label>
+            </div>
+            <div class="form-floating form-div">
+                <input type="number" class="form-control" id="maxDelay" step="0.1" name="maxDelay" min="0" value="2.5"
+                    max="290">
+                <label for="count">Maximum</label>
+            </div>
+            <br>
+            <button class="btn btn-sm btn-primary rounded-pill btn-dark" id="search">Start Search</button>
+
+            <button class="btn btn-sm btn-primary rounded-pill hidden btn-dark" id="stop">Stop Search</button>
+            <!-- </div> -->
+            <!-- <p id="referralTest">test referral change</p> -->
+            <br>
+            <br>
+            <p class="hidden" id="searches-left">Searches left: </p>
+    </div>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
+    <script src="rewards/popup.js"></script>
 </body>
 
 </html>

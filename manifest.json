@@ -21,10 +21,47 @@
                 "youtube/contentScript.js"
             ],
             "run_at": "document_end"
+        },
+        {
+            "js": [
+                "rewards/constants.js",
+                "utils.js",
+                "rewards/chrome-utils.js",
+                "content-scripts/script-injector.js",
+                "content-scripts/window-variable-grabber/injector.js",
+                "content-scripts/quiz-answer-hash-function.js",
+                "content-scripts/main.js"
+            ],
+            "matches": [
+                "https://*.bing.com/*"
+            ]
         }
+        
     ],
+    "declarative_net_request": {
+        "rule_resources": [
+            {
+                "enabled": false,
+                "id": "ruleset_1",
+                "path": "rewards/rules.json"
+            },
+            {
+                "enabled": false,
+                "id": "ruleset_2",
+                "path": "rewards/rules2.json"
+            },
+            {
+                "enabled": false,
+                "id": "ruleset_3",
+                "path": "rewards/rules3.json"
+            }
+        ]
+    },
     "permissions": [
         "storage",
+        "declarativeNetRequest",
+        "alarms",
+        "webRequest",
         "tabs",
         "activeTab"
     ],
@@ -43,7 +80,8 @@
     ],
     "host_permissions": [
         "https://galgotias.codetantra.com/*",
-        "https://*.youtube.com/*"
+        "https://*.youtube.com/*",
+        "https://*.bing.com/*"
     ],
     "background": {
         "service_worker": "background.js"
